@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#005522" />
+
+  <!-- ====== SEO ====== -->
+  <title>SERVIORINOQUIA SAS | Transporte Especial de Pasajeros — Seguridad y Puntualidad</title>
+  <meta name="description" content="SERVIORINOQUIA SAS: empresa líder en transporte especial de pasajeros. Servicio empresarial, ejecutivo, turístico y escolar con conductores certificados, monitoreo GPS y flota moderna. Cotiza ahora." />
+  <meta name="keywords" content="transporte especial, transporte empresarial, transporte ejecutivo, transporte escolar, transporte turístico, Villavicencio, Meta, Orinoquía, buses, vans" />
+  <meta name="author" content="SERVIORINOQUIA SAS" />
+  <link rel="canonical" href="https://www.serviorinoquia.com/" />
+
+  <!-- ====== Open Graph ====== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SERVIORINOQUIA SAS" />
+  <meta property="og:title" content="SERVIORINOQUIA SAS | Transporte Especial de Pasajeros" />
+  <meta property="og:description" content="Movemos personas con seguridad, puntualidad y confianza. Transporte empresarial, ejecutivo, turístico y escolar." />
+  <meta property="og:url" content="https://www.serviorinoquia.com/" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:image" content="public/LOGO%20(1).png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ====== Favicon (logo oficial) ====== -->
+  <link rel="icon" type="image/png" href="public/LOGO%20(1).png" />
+  <link rel="apple-touch-icon" href="public/LOGO%20(1).png" />
+
+  <!-- ====== Fuentes ====== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ====== Font Awesome ====== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ====== Estilos ====== -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ====== Schema.org — LocalBusiness ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "SERVIORINOQUIA SAS",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80",
+    "description": "Empresa de transporte especial de pasajeros: empresarial, ejecutivo, turístico y escolar.",
+    "@id": "https://www.serviorinoquia.com",
+    "url": "https://www.serviorinoquia.com",
+    "telephone": "+57 320 000 0000",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cra. 30 # 15-42",
+      "addressLocality": "Villavicencio",
+      "addressRegion": "Meta",
+      "postalCode": "500001",
+      "addressCountry": "CO"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 4.142, "longitude": -73.626 },
+    "areaServed": ["Villavicencio", "Bogotá", "Meta", "Casanare", "Arauca", "Vichada", "Guaviare", "Colombia"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00", "closes": "23:59"
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "512" }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ====================== LOADER ====================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img class="loader__logo" src="public/LOGO%20(1).png" alt="" width="1862" height="484" />
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <!-- ====================== BARRA SUPERIOR ====================== -->
+  <div class="topbar" id="topbar">
+    <div class="container topbar__inner">
+      <ul class="topbar__contact">
+        <li><i class="fa-solid fa-phone"></i> <a href="tel:+573200000000">+57 320 000 0000</a></li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contacto@serviorinoquia.com">contacto@serviorinoquia.com</a></li>
+        <li class="topbar__hide"><i class="fa-solid fa-clock"></i> Disponibilidad 24/7</li>
+      </ul>
+      <ul class="topbar__social" aria-label="Redes sociales">
+        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ====================== NAVBAR ====================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="brand" aria-label="Inicio SERVIORINOQUIA SAS">
+        <img class="brand__logo" src="public/LOGO%20(1).png"
+             alt="SERVIORINOQUIA SAS — Servicios Especiales Orinoquía" width="1862" height="484" />
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link active">Inicio</a></li>
+          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#flota" class="nav__link">Flota</a></li>
+          <li><a href="#pqrs" class="nav__link">PQRS</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+        <a href="#contacto" class="btn btn--orange nav__cta">Cotizar Ahora</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" id="heroBg"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <p class="hero__eyebrow reveal" data-anim="fade-up"><i class="fa-solid fa-shield-halved"></i> Transporte Especial de Pasajeros</p>
+        <h1 class="hero__title reveal" data-anim="fade-up" data-delay="80">
+          Movemos personas con <span>seguridad</span>, puntualidad y confianza.
+        </h1>
+        <p class="hero__subtitle reveal" data-anim="fade-up" data-delay="160">
+          Flota moderna, conductores certificados y monitoreo GPS en tiempo real.
+          La experiencia premium en transporte empresarial, ejecutivo, turístico y escolar.
+        </p>
+        <div class="hero__actions reveal" data-anim="fade-up" data-delay="240">
+          <a href="#contacto" class="btn btn--green btn--lg">Solicitar Cotización <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#servicios" class="btn btn--orange btn--lg">Conocer Servicios</a>
+        </div>
+        <ul class="hero__badges reveal" data-anim="fade-up" data-delay="320">
+          <li><i class="fa-solid fa-certificate"></i> Habilitados MinTransporte</li>
+          <li><i class="fa-solid fa-location-dot"></i> GPS 24/7</li>
+          <li><i class="fa-solid fa-user-shield"></i> Pólizas al día</li>
+        </ul>
+      </div>
+      <a href="#stats" class="hero__scroll" aria-label="Desplázate hacia abajo"><span></span></a>
+    </section>
+
+    <!-- ====================== ESTADÍSTICAS ====================== -->
+    <section class="stats" id="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal" data-anim="fade-up">
+          <i class="fa-solid fa-award stat__icon"></i>
+          <div class="stat__num"><span class="counter" data-target="15">0</span>+</div>
+          <p class="stat__label">Años de experiencia</p>
+        </div>
+        <div class="stat reveal" data-anim="fade-up" data-delay="100">
+          <i class="fa-solid fa-building stat__icon"></i>
+          <div class="stat__num"><span class="counter" data-target="500">0</span>+</div>
+          <p class="stat__label">Empresas atendidas</p>
+        </div>
+        <div class="stat reveal" data-anim="fade-up" data-delay="200">
+          <i class="fa-solid fa-users stat__icon"></i>
+          <div class="stat__num"><span class="counter" data-target="100000" data-suffix="">0</span>+</div>
+          <p class="stat__label">Pasajeros transportados</p>
+        </div>
+        <div class="stat reveal" data-anim="fade-up" data-delay="300">
+          <i class="fa-solid fa-headset stat__icon"></i>
+          <div class="stat__num"><span class="counter" data-target="24">0</span>/7</div>
+          <p class="stat__label">Disponibilidad</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== NOSOTROS ====================== -->
+    <section class="section about" id="nosotros">
+      <div class="container about__grid">
+        <div class="about__media reveal" data-anim="fade-right">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80"
+               alt="Equipo corporativo de SERVIORINOQUIA" loading="lazy" onerror="this.classList.add('img--fallback')" />
+          <div class="about__badge glass">
+            <i class="fa-solid fa-medal"></i>
+            <div><strong>+15 años</strong><span>liderando el sector</span></div>
+          </div>
+        </div>
+        <div class="about__body">
+          <span class="eyebrow reveal" data-anim="fade-up">Nosotros</span>
+          <h2 class="section__title reveal" data-anim="fade-up" data-delay="60">Una empresa que se mueve por las personas</h2>
+          <p class="reveal" data-anim="fade-up" data-delay="120">
+            En <strong>SERVIORINOQUIA SAS</strong> llevamos más de 15 años conectando empresas, familias y viajeros
+            a lo largo de la Orinoquía colombiana y todo el país. Combinamos tecnología, seguridad y un servicio
+            impecable para que cada trayecto sea puntual, cómodo y confiable.
+          </p>
+
+          <div class="about__cards">
+            <article class="mini-card reveal" data-anim="fade-up" data-delay="140">
+              <i class="fa-solid fa-bullseye"></i>
+              <h3>Misión</h3>
+              <p>Brindar soluciones de transporte especial seguras, puntuales y de alta calidad, superando las expectativas de nuestros clientes.</p>
+            </article>
+            <article class="mini-card reveal" data-anim="fade-up" data-delay="220">
+              <i class="fa-solid fa-eye"></i>
+              <h3>Visión</h3>
+              <p>Ser la empresa de transporte especial líder y referente en Colombia por su innovación, seguridad y excelencia en el servicio.</p>
+            </article>
+          </div>
+
+          <ul class="values reveal" data-anim="fade-up" data-delay="260">
+            <li><i class="fa-solid fa-check"></i> Seguridad</li>
+            <li><i class="fa-solid fa-check"></i> Puntualidad</li>
+            <li><i class="fa-solid fa-check"></i> Responsabilidad</li>
+            <li><i class="fa-solid fa-check"></i> Calidad</li>
+            <li><i class="fa-solid fa-check"></i> Compromiso</li>
+            <li><i class="fa-solid fa-check"></i> Innovación</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="container timeline">
+        <h3 class="timeline__title reveal" data-anim="fade-up">Nuestra trayectoria</h3>
+        <div class="timeline__track">
+          <div class="tl-item reveal" data-anim="fade-up">
+            <span class="tl-year">2009</span>
+            <div class="tl-dot"></div>
+            <p>Nace SERVIORINOQUIA en Villavicencio con una pequeña flota de vans ejecutivas.</p>
+          </div>
+          <div class="tl-item reveal" data-anim="fade-up" data-delay="100">
+            <span class="tl-year">2014</span>
+            <div class="tl-dot"></div>
+            <p>Ampliamos cobertura a Bogotá y los principales departamentos de la Orinoquía.</p>
+          </div>
+          <div class="tl-item reveal" data-anim="fade-up" data-delay="200">
+            <span class="tl-year">2019</span>
+            <div class="tl-dot"></div>
+            <p>Incorporamos monitoreo GPS 24/7 y renovamos la flota con vehículos de última generación.</p>
+          </div>
+          <div class="tl-item reveal" data-anim="fade-up" data-delay="300">
+            <span class="tl-year">2024</span>
+            <div class="tl-dot"></div>
+            <p>Más de 500 empresas confían en nosotros y superamos los 100.000 pasajeros transportados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador SVG -->
+    <div class="wave-sep" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,0 720,32 C960,64 1200,128 1440,72 L1440,120 L0,120 Z" fill="#F5F7F8"></path></svg>
+    </div>
+
+    <!-- ====================== SERVICIOS ====================== -->
+    <section class="section section--gray" id="servicios">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-anim="fade-up">Servicios</span>
+          <h2 class="section__title reveal" data-anim="fade-up" data-delay="60">Soluciones de transporte a tu medida</h2>
+          <p class="section__lead reveal" data-anim="fade-up" data-delay="120">Cada servicio está diseñado para ofrecer confort, seguridad y cumplimiento total.</p>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card tilt reveal" data-anim="fade-up">
+            <div class="service-card__icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Transporte Empresarial</h3>
+            <p>Rutas de personal puntuales y seguras para tu compañía, con control de asistencia y trazabilidad.</p>
+            <a href="#contacto" class="link-more">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service-card tilt reveal" data-anim="fade-up" data-delay="80">
+            <div class="service-card__icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Transporte Ejecutivo</h3>
+            <p>Vehículos de alta gama y conductores profesionales para directivos y clientes VIP.</p>
+            <a href="#contacto" class="link-more">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service-card tilt reveal" data-anim="fade-up" data-delay="160">
+            <div class="service-card__icon"><i class="fa-solid fa-mountain-sun"></i></div>
+            <h3>Transporte Turístico</h3>
+            <p>Planes y excursiones cómodas y seguras a los destinos más increíbles de Colombia.</p>
+            <a href="#contacto" class="link-more">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service-card tilt reveal" data-anim="fade-up">
+            <div class="service-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Transporte Escolar</h3>
+            <p>Rutas escolares con monitoras, cinturones y protocolos de seguridad para los más pequeños.</p>
+            <a href="#contacto" class="link-more">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service-card tilt reveal" data-anim="fade-up" data-delay="80">
+            <div class="service-card__icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <h3>Eventos Corporativos</h3>
+            <p>Logística de movilidad para congresos, capacitaciones y eventos de gran formato.</p>
+            <a href="#contacto" class="link-more">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service-card tilt reveal" data-anim="fade-up" data-delay="160">
+            <div class="service-card__icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h3>Traslados Aeropuerto</h3>
+            <p>Recogidas y entregas puntuales con seguimiento de vuelos y atención 24/7.</p>
+            <a href="#contacto" class="link-more">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== FLOTA ====================== -->
+    <section class="section" id="flota">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-anim="fade-up">Flota</span>
+          <h2 class="section__title reveal" data-anim="fade-up" data-delay="60">Vehículos modernos para cada necesidad</h2>
+          <p class="section__lead reveal" data-anim="fade-up" data-delay="120">Mantenimiento preventivo permanente, revisión técnico-mecánica al día y confort de primer nivel.</p>
+        </div>
+
+        <div class="fleet__grid">
+          <!-- Card 1 -->
+          <article class="fleet-card reveal" data-anim="fade-up">
+            <div class="fleet-card__img">
+              <img src="https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?auto=format&fit=crop&w=800&q=80" alt="Van ejecutiva" loading="lazy" onerror="this.classList.add('img--fallback')"/>
+              <span class="fleet-card__state"><i class="fa-solid fa-circle"></i> Disponible</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3>Van Ejecutiva</h3>
+              <p class="fleet-card__cap"><i class="fa-solid fa-users"></i> Capacidad: 12–19 pasajeros</p>
+              <ul class="fleet-card__specs">
+                <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado</li>
+                <li><i class="fa-solid fa-location-dot"></i> GPS</li>
+                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Seguros</li>
+              </ul>
+              <a href="#contacto" class="btn btn--green btn--block">Solicitar vehículo</a>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="fleet-card reveal" data-anim="fade-up" data-delay="100">
+            <div class="fleet-card__img">
+              <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80" alt="Microbús" loading="lazy" onerror="this.classList.add('img--fallback')"/>
+              <span class="fleet-card__state"><i class="fa-solid fa-circle"></i> Disponible</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3>Microbús</h3>
+              <p class="fleet-card__cap"><i class="fa-solid fa-users"></i> Capacidad: 20–28 pasajeros</p>
+              <ul class="fleet-card__specs">
+                <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado</li>
+                <li><i class="fa-solid fa-location-dot"></i> GPS</li>
+                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Seguros</li>
+              </ul>
+              <a href="#contacto" class="btn btn--green btn--block">Solicitar vehículo</a>
+            </div>
+          </article>
+          <!-- Card 3 -->
+          <article class="fleet-card reveal" data-anim="fade-up" data-delay="200">
+            <div class="fleet-card__img">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Bus de turismo" loading="lazy" onerror="this.classList.add('img--fallback')"/>
+              <span class="fleet-card__state"><i class="fa-solid fa-circle"></i> Disponible</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3>Bus de Turismo</h3>
+              <p class="fleet-card__cap"><i class="fa-solid fa-users"></i> Capacidad: 40–45 pasajeros</p>
+              <ul class="fleet-card__specs">
+                <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado</li>
+                <li><i class="fa-solid fa-location-dot"></i> GPS</li>
+                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Seguros</li>
+              </ul>
+              <a href="#contacto" class="btn btn--green btn--block">Solicitar vehículo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== ¿POR QUÉ ELEGIRNOS? ====================== -->
+    <section class="section" id="porque">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-anim="fade-up">¿Por qué elegirnos?</span>
+          <h2 class="section__title reveal" data-anim="fade-up" data-delay="60">La diferencia SERVIORINOQUIA</h2>
+        </div>
+        <div class="why__grid">
+          <div class="why-card tilt reveal" data-anim="fade-up"><i class="fa-solid fa-id-card-clip"></i><h3>Conductores certificados</h3><p>Personal capacitado y evaluado bajo estrictos protocolos de seguridad vial.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up" data-delay="60"><i class="fa-solid fa-bus"></i><h3>Vehículos modernos</h3><p>Flota renovada con mantenimiento preventivo permanente.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up" data-delay="120"><i class="fa-solid fa-satellite-dish"></i><h3>Monitoreo GPS</h3><p>Seguimiento en tiempo real de cada trayecto, las 24 horas.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up" data-delay="180"><i class="fa-solid fa-headset"></i><h3>Atención 24/7</h3><p>Un equipo siempre disponible para responder a tus necesidades.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up"><i class="fa-solid fa-user-shield"></i><h3>Seguridad</h3><p>Pólizas al día y cumplimiento total de la normativa de transporte especial.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up" data-delay="60"><i class="fa-solid fa-clock"></i><h3>Puntualidad</h3><p>Cumplimos porque tu tiempo y el de tu empresa valen.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up" data-delay="120"><i class="fa-solid fa-medal"></i><h3>Experiencia</h3><p>Más de 15 años moviendo personas por toda Colombia.</p></div>
+          <div class="why-card tilt reveal" data-anim="fade-up" data-delay="180"><i class="fa-solid fa-leaf"></i><h3>Compromiso</h3><p>Operación responsable con el entorno y las comunidades.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROCESO ====================== -->
+    <section class="section section--gray" id="proceso">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-anim="fade-up">Proceso</span>
+          <h2 class="section__title reveal" data-anim="fade-up" data-delay="60">Contratar tu servicio es muy fácil</h2>
+        </div>
+        <div class="process">
+          <div class="process-step reveal" data-anim="fade-up">
+            <div class="process-step__num">1</div>
+            <i class="fa-solid fa-file-signature"></i>
+            <h3>Solicita cotización</h3>
+            <p>Cuéntanos qué necesitas y recibe una propuesta a tu medida.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+          <div class="process-step reveal" data-anim="fade-up" data-delay="100">
+            <div class="process-step__num">2</div>
+            <i class="fa-solid fa-clipboard-check"></i>
+            <h3>Confirmamos servicio</h3>
+            <p>Definimos horarios, rutas y detalles junto a tu equipo.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+          <div class="process-step reveal" data-anim="fade-up" data-delay="200">
+            <div class="process-step__num">3</div>
+            <i class="fa-solid fa-bus-simple"></i>
+            <h3>Asignamos vehículo</h3>
+            <p>Elegimos el vehículo y conductor ideal para tu operación.</p>
+          </div>
+          <div class="process-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+          <div class="process-step reveal" data-anim="fade-up" data-delay="300">
+            <div class="process-step__num">4</div>
+            <i class="fa-solid fa-face-smile"></i>
+            <h3>Disfruta el viaje</h3>
+            <p>Relájate: nosotros nos encargamos de todo el trayecto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PQRS ====================== -->
+    <section class="section" id="pqrs">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-anim="fade-up">PQRS</span>
+          <h2 class="section__title reveal" data-anim="fade-up" data-delay="60">Peticiones, quejas, reclamos y sugerencias</h2>
+          <p class="section__lead reveal" data-anim="fade-up" data-delay="120">
+            Para nosotros es muy importante contar con usted. En procura de mejorar nuestros servicios,
+            aquí puede registrar sus solicitudes, quejas, reclamos, sugerencias y/o felicitaciones.
+          </p>
+        </div>
+
+        <div class="pqrs__grid">
+          <!-- Definiciones -->
+          <div class="pqrs__types reveal" data-anim="fade-right">
+            <div class="pqrs-type">
+              <span class="pqrs-type__ico"><i class="fa-solid fa-file-signature"></i></span>
+              <div>
+                <strong>Petición</strong>
+                <p>Solicitud formal que se presenta ante las autoridades competentes para reclamar o exigir una solución a alguna situación.</p>
+              </div>
+            </div>
+            <div class="pqrs-type">
+              <span class="pqrs-type__ico"><i class="fa-solid fa-circle-exclamation"></i></span>
+              <div>
+                <strong>Queja</strong>
+                <p>Insatisfacción con la conducta o la acción de quienes llevan a cabo el servicio, o por deficiencia en la atención prestada.</p>
+              </div>
+            </div>
+            <div class="pqrs-type">
+              <span class="pqrs-type__ico"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              <div>
+                <strong>Reclamo</strong>
+                <p>Insatisfacción por la prestación de un servicio deficiente, retraso, desatención o deficiencia en los servicios prestados.</p>
+              </div>
+            </div>
+            <div class="pqrs-type">
+              <span class="pqrs-type__ico"><i class="fa-solid fa-lightbulb"></i></span>
+              <div>
+                <strong>Sugerencia</strong>
+                <p>Algo que se propone, insinúa o sugiere. El término suele emplearse como equivalente a consejo o recomendación.</p>
+              </div>
+            </div>
+            <div class="pqrs-type">
+              <span class="pqrs-type__ico"><i class="fa-solid fa-star"></i></span>
+              <div>
+                <strong>Felicitación</strong>
+                <p>Acción de felicitar, es decir, de expresar la satisfacción que se siente por un acontecimiento favorable.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="contact__form-wrap reveal" data-anim="fade-left">
+            <form class="contact-form" id="pqrsForm"
+                  data-ok-msg="¡Gracias! Su PQRS fue radicada correctamente. Le daremos respuesta en el menor tiempo posible."
+                  novalidate>
+              <div class="field">
+                <label for="pqrsTipo">Tipo de solicitud *</label>
+                <select id="pqrsTipo" name="tipo" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option>Petición</option>
+                  <option>Queja</option>
+                  <option>Reclamo</option>
+                  <option>Sugerencia</option>
+                  <option>Felicitación</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="pqrsCliente">Nombre del cliente *</label>
+                <input type="text" id="pqrsCliente" name="cliente" required placeholder="Empresa o entidad" autocomplete="organization"/>
+              </div>
+              <div class="field">
+                <label for="pqrsUsuario">Nombre del usuario *</label>
+                <input type="text" id="pqrsUsuario" name="usuario" required placeholder="Nombre de quien registra" autocomplete="name"/>
+              </div>
+              <div class="field">
+                <label for="pqrsDoc">Documento de identificación *</label>
+                <input type="text" id="pqrsDoc" name="documento" required placeholder="Número de documento" inputmode="numeric"/>
+              </div>
+              <div class="field">
+                <label for="pqrsTel">Teléfono</label>
+                <input type="tel" id="pqrsTel" name="telefono" placeholder="+57 300 000 0000" autocomplete="tel"/>
+              </div>
+              <div class="field">
+                <label for="pqrsCorreo">Correo *</label>
+                <input type="email" id="pqrsCorreo" name="correo" required placeholder="tucorreo@empresa.com" autocomplete="email"/>
+              </div>
+              <div class="field">
+                <label for="pqrsAsunto">Asunto *</label>
+                <input type="text" id="pqrsAsunto" name="asunto" required placeholder="Resumen de su solicitud"/>
+              </div>
+              <div class="field">
+                <label for="pqrsDesc">Descripción *</label>
+                <textarea id="pqrsDesc" name="descripcion" rows="4" required placeholder="Describa con el mayor detalle posible lo sucedido"></textarea>
+              </div>
+              <div class="field field--file">
+                <label for="pqrsArchivos">Registros (opcional)</label>
+                <p class="field__hint">Suba hasta 5 archivos: PDF, documento, imagen o video. Máximo 10 MB por archivo.</p>
+                <input type="file" id="pqrsArchivos" name="archivos" class="file-input" multiple
+                       accept=".pdf,.doc,.docx,image/*,video/*"/>
+                <label for="pqrsArchivos" class="file-drop">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <span>Agregar archivo</span>
+                </label>
+                <ul class="file-list" id="pqrsFileList"></ul>
+              </div>
+              <button type="submit" class="btn btn--orange btn--lg btn--block">Radicar PQRS <i class="fa-solid fa-paper-plane"></i></button>
+              <p class="form-msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CONTACTO ====================== -->
+    <section class="section section--gray" id="contacto">
+      <div class="container contact__grid">
+        <div class="contact__info reveal" data-anim="fade-right">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="section__title">Solicita tu cotización</h2>
+          <p class="section__lead">Cuéntanos qué necesitas y te responderemos con una propuesta a la medida.</p>
+
+          <ul class="contact__list">
+            <li><span class="contact__ico"><i class="fa-solid fa-phone"></i></span><div><strong>Teléfono</strong><a href="tel:+573200000000">+57 320 000 0000</a></div></li>
+            <li><span class="contact__ico"><i class="fa-brands fa-whatsapp"></i></span><div><strong>WhatsApp</strong><a href="https://wa.me/573200000000" target="_blank" rel="noopener">+57 320 000 0000</a></div></li>
+            <li><span class="contact__ico"><i class="fa-solid fa-envelope"></i></span><div><strong>Correo</strong><a href="mailto:contacto@serviorinoquia.com">contacto@serviorinoquia.com</a></div></li>
+            <li><span class="contact__ico"><i class="fa-solid fa-location-dot"></i></span><div><strong>Dirección</strong><span>Cra. 30 # 15-42, Villavicencio, Meta</span></div></li>
+            <li><span class="contact__ico"><i class="fa-solid fa-clock"></i></span><div><strong>Horarios</strong><span>Atención 24 horas · 7 días</span></div></li>
+          </ul>
+
+          <div class="contact__map">
+            <iframe title="Ubicación SERVIORINOQUIA en Villavicencio"
+              src="https://www.google.com/maps?q=Villavicencio,Meta,Colombia&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap reveal" data-anim="fade-left">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name"/>
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" autocomplete="organization"/>
+            </div>
+            <div class="field">
+              <label for="correo">Correo electrónico *</label>
+              <input type="email" id="correo" name="correo" required placeholder="tucorreo@empresa.com" autocomplete="email"/>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="+57 300 000 0000" autocomplete="tel"/>
+            </div>
+            <div class="field">
+              <label for="servicio">Servicio requerido *</label>
+              <select id="servicio" name="servicio" required>
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option>Transporte Empresarial</option>
+                <option>Transporte Ejecutivo</option>
+                <option>Transporte Turístico</option>
+                <option>Transporte Escolar</option>
+                <option>Eventos Corporativos</option>
+                <option>Traslados Aeropuerto</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos los detalles de tu solicitud"></textarea>
+            </div>
+            <button type="submit" class="btn btn--orange btn--lg btn--block">Enviar solicitud <i class="fa-solid fa-paper-plane"></i></button>
+            <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <a href="#inicio" class="brand brand--footer">
+          <img class="brand__logo brand__logo--light" src="public/LOGO%20(1).png"
+               alt="SERVIORINOQUIA SAS" width="1862" height="484" loading="lazy" />
+        </a>
+        <p class="footer__desc">Transporte especial de pasajeros con seguridad, puntualidad y tecnología. Movemos personas por toda Colombia.</p>
+        <ul class="footer__social">
+          <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Menú</h4>
+        <ul class="footer__links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#flota">Flota</a></li>
+          <li><a href="#pqrs">PQRS</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul class="footer__links">
+          <li><a href="#servicios">Transporte Empresarial</a></li>
+          <li><a href="#servicios">Transporte Ejecutivo</a></li>
+          <li><a href="#servicios">Transporte Turístico</a></li>
+          <li><a href="#servicios">Transporte Escolar</a></li>
+          <li><a href="#servicios">Eventos Corporativos</a></li>
+          <li><a href="#servicios">Traslados Aeropuerto</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul class="footer__contact">
+          <li><i class="fa-solid fa-location-dot"></i> Cra. 30 # 15-42, Villavicencio, Meta</li>
+          <li><i class="fa-solid fa-phone"></i> +57 320 000 0000</li>
+          <li><i class="fa-solid fa-envelope"></i> contacto@serviorinoquia.com</li>
+          <li><i class="fa-solid fa-clock"></i> Atención 24/7</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© <span id="year"></span> SERVIORINOQUIA SAS. Todos los derechos reservados.</p>
+        <p>Diseñado con <i class="fa-solid fa-heart"></i> para moverte mejor.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================== WHATSAPP FLOTANTE ====================== -->
+  <a href="https://wa.me/573200000000?text=Hola%20SERVIORINOQUIA,%20quiero%20una%20cotización"
+     class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <span class="wa-float__tooltip">¿Necesitas una cotización?</span>
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ====================== VOLVER ARRIBA ====================== -->
+  <button class="to-top" id="toTop" aria-label="Volver arriba"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <!-- ====================== SCRIPTS ====================== -->
+  <script src="script.js" defer></script>
+</body>
+</html>
