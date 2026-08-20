@@ -213,6 +213,69 @@
   }
 
   /* ---------------------------------------------------------------
+     5.b BUS DE LA LÍNEA DE TIEMPO
+     El bus avanza por la línea de "Nuestra trayectoria" según lo que el
+     visitante ha bajado, y va pintando detrás la carretera recorrida.
+     Solo en escritorio: en móvil la línea horizontal no existe.
+     --------------------------------------------------------------- */
+  function initTimelineBus() {
+    const track = $('#timelineTrack');
+    const bus   = $('#timelineBus');
+    const road  = $('#timelineRoad');
+    if (!track || !bus || !road) return;
+    if (window.innerWidth < 1080 || reducedMotion) return;
+
+    const items = $$('.tl-item', track);
+    if (!items.length) return;
+
+    track.classList.add('has-bus');
+    bus.style.display = 'flex';
+
+    // Fracción de recorrido a la que el bus arranca hacia cada parada. La
+    // primera va casi al principio para que no se quede quieto esperando.
+    const CUTS = items.map((_, i) => 0.10 + i * 0.22);
+
+    // Centro horizontal de cada punto naranja: son las paradas del bus.
+    let stops = [];
+    const measure = () => {
+      const base = track.getBoundingClientRect().left;
+      stops = items.map(it => {
+        const dot = it.querySelector('.tl-dot').getBoundingClientRect();
+        return dot.left - base + dot.width / 2;
+      });
+    };
+
+    let last = -1;
+    const update = () => {
+      ticking = false;
+      const rect  = track.getBoundingClientRect();
+      const start = window.innerHeight * 0.9;
+      const end   = window.innerHeight * 0.35;
+      const p     = Math.min(Math.max((start - rect.top) / (start - end), 0), 1);
+
+      // Cuántas paradas ha alcanzado ya: el bus salta de una a la siguiente.
+      let reached = 0;
+      for (const c of CUTS) if (p >= c) reached++;
+      if (reached === last) return;
+      last = reached;
+
+      const x = reached === 0 ? 0 : stops[reached - 1];
+      bus.style.left   = x + 'px';
+      road.style.width = x + 'px';
+      items.forEach((it, i) => it.classList.toggle('is-reached', i < reached));
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => { measure(); last = -1; update(); });
+    measure();
+    update();
+  }
+
+  /* ---------------------------------------------------------------
      6. ACORDEÓN FAQ
      --------------------------------------------------------------- */
   function initFaq() {
@@ -414,6 +477,7 @@
     initReveal();
     initCounters();
     initParallax();
+    initTimelineBus();
     initFaq();
     initClients();
     initTilt();

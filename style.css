@@ -232,6 +232,7 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
 .nav__link:hover::after,.nav__link.active::after{transform:scaleX(1)}
 .nav__link.active{color:var(--green-900);font-weight:600}
 .nav__cta{padding:12px 26px;font-size:.88rem}
+.nav__extra{display:none}
 
 /* Toggle móvil */
 .nav__toggle{display:none;width:44px;height:44px;border-radius:var(--r-sm);flex-direction:column;gap:5px;align-items:center;justify-content:center}
@@ -384,6 +385,40 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
   background:linear-gradient(90deg,var(--green-600),var(--orange-500));
   border-radius:2px;opacity:.28;
 }
+/* Carretera recorrida: se va pintando detrás del bus a medida que avanza. */
+.timeline__road{
+  position:absolute;left:0;top:52px;height:3px;width:0;z-index:1;
+  background:linear-gradient(90deg,var(--green-600),var(--orange-500));
+  border-radius:2px;
+}
+.timeline__bus{
+  position:absolute;left:0;top:52px;z-index:3;
+  width:38px;height:38px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;
+  background:var(--white);border:2px solid var(--orange-500);
+  box-shadow:0 6px 16px rgba(43,43,43,.16),0 0 0 6px rgba(255,255,255,.9);
+  color:var(--green-900);font-size:.92rem;
+  transform:translate(-50%,-50%);
+  animation:busIdle 1.6s ease-in-out infinite;
+  /* El salto entre paradas: corto y con frenada suave al llegar. */
+  transition:left .42s cubic-bezier(.3,.85,.3,1);
+}
+.timeline__road{transition:width .42s cubic-bezier(.3,.85,.3,1)}
+
+/* Con el bus activo cada hito espera atenuado y se enciende cuando el bus
+   llega a su parada. Sin bus (móvil o "reducir movimiento") no aplica. */
+.timeline__track.has-bus .tl-item{transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.timeline__track.has-bus .tl-item:not(.is-reached){opacity:.18;transform:translateY(10px)}
+.timeline__track.has-bus .tl-item.is-reached{opacity:1;transform:none}
+.timeline__track.has-bus .tl-item.is-reached .tl-dot{
+  background:var(--orange-500);box-shadow:0 0 0 6px rgba(243,146,0,.2);
+}
+/* El translate mantiene el bus centrado sobre la línea; la animación solo
+   añade el temblorcito vertical del motor. */
+@keyframes busIdle{
+  0%,100%{transform:translate(-50%,-50%)}
+  50%{transform:translate(-50%,calc(-50% - 2px))}
+}
 .tl-item{position:relative;text-align:center;padding-top:0}
 .tl-year{
   display:inline-block;font-family:var(--font-title);font-weight:700;font-size:1.05rem;
@@ -404,7 +439,7 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
 .wave-sep svg{width:100%;height:90px;display:block}
 
 /* ------------------------- 10. SERVICIOS ------------------------- */
-.services__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.services__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .service-card{
   background:var(--white);border-radius:var(--r-lg);padding:38px 32px;
   border:1px solid var(--line);box-shadow:var(--sh-xs);
@@ -487,7 +522,13 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
 .pin-label--r{text-anchor:end}
 
 /* ------------------------- 13. POR QUÉ ELEGIRNOS ------------------------- */
-.why__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+/* 8 columnas = 4 tarjetas de 2 columnas cada una. Con 7 tarjetas, la fila de
+   abajo (3) arrancaría pegada a la izquierda y dejaría el hueco a la derecha;
+   al hacer que la 5.ª empiece en la columna 2 se corre media tarjeta y las
+   tres quedan centradas. Si cambia el número de tarjetas, revisar el nth-child. */
+.why__grid{display:grid;grid-template-columns:repeat(8,1fr);gap:24px}
+.why__grid > .why-card{grid-column:span 2}
+.why__grid > .why-card:nth-child(5){grid-column:2/span 2}
 .why-card{
   text-align:center;padding:38px 24px;border-radius:var(--r-lg);
   background:var(--gray-bg);border:1px solid transparent;
@@ -735,7 +776,16 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
 .footer__contact{display:grid;gap:14px;font-size:.92rem}
 .footer__contact li{display:flex;gap:12px;align-items:flex-start}
 .footer__contact i{color:var(--orange-300);margin-top:5px;width:16px;flex-shrink:0}
-.footer__bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;font-size:.85rem}
+.footer__legal{
+  border-top:1px solid rgba(255,255,255,.1);padding:22px 0 0;
+  display:flex;align-items:center;justify-content:space-between;gap:14px 26px;flex-wrap:wrap;
+  font-size:.82rem;color:rgba(255,255,255,.72);
+}
+.footer__legal strong{color:rgba(255,255,255,.9);font-weight:600}
+.footer__certs{display:flex;gap:18px;flex-wrap:wrap}
+.footer__certs li{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.footer__certs i{color:var(--orange-500)}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;font-size:.85rem;margin-top:22px}
 .footer__bottom .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .footer__bottom i{color:var(--orange-500)}
 
@@ -793,6 +843,8 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
   .section{padding:88px 0}
   .services__grid,.fleet__grid,.blog__grid,.testimonials__grid{grid-template-columns:repeat(2,1fr)}
   .why__grid{grid-template-columns:repeat(2,1fr)}
+  .why__grid > .why-card,
+  .why__grid > .why-card:nth-child(5){grid-column:auto}
   .about__grid,.coverage__grid,.contact__grid,.pqrs__grid{grid-template-columns:1fr;gap:48px}
   .about__media img{aspect-ratio:16/10}
   .about__badge{right:18px}
@@ -802,6 +854,7 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
   .process-arrow{display:none}
   .timeline__track{grid-template-columns:1fr 1fr;gap:44px 26px}
   .timeline__track::before{display:none}
+  .timeline__road,.timeline__bus{display:none!important}
 }
 
 @media (max-width:900px){
@@ -828,10 +881,43 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
     overflow-y:auto;z-index:1200;
   }
   .nav.is-open{transform:translateX(0)}
-  .nav__list{flex-direction:column;align-items:stretch;gap:4px}
-  .nav__link{padding:14px 12px;font-size:1rem;border-bottom:1px solid var(--line)}
+  .nav__list{flex-direction:column;align-items:stretch;gap:2px}
+  /* Sin display:block el relleno vertical del enlace se sale de su <li> y las
+     opciones se montan unas sobre otras. */
+  .nav__link{
+    display:block;padding:15px 14px;font-size:1.02rem;border-radius:var(--r-sm);
+    border-bottom:1px solid var(--line);
+  }
+  .nav__list li:last-child .nav__link{border-bottom:0}
   .nav__link::after{display:none}
-  .nav__cta{margin-top:14px;justify-content:center}
+  .nav__link.active{background:rgba(0,85,34,.07)}
+  .nav__cta{margin-top:18px;justify-content:center;width:100%}
+
+  /* Datos de contacto al pie del panel: aprovechan el espacio que quedaba
+     en blanco y repiten lo que la barra superior oculta en móvil. */
+  .nav__extra{
+    display:block;margin-top:auto;padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .nav__extra-link{
+    display:flex;align-items:center;gap:10px;
+    padding:9px 0;font-size:.94rem;font-weight:500;color:var(--ink);
+  }
+  .nav__extra-link i{width:18px;text-align:center;color:var(--green-600)}
+  .nav__extra-link:hover{color:var(--green-600)}
+  .nav__extra-note{
+    display:flex;align-items:center;gap:10px;
+    padding:9px 0;font-size:.88rem;color:var(--ink-60);
+  }
+  .nav__extra-note i{width:18px;text-align:center;color:var(--orange-500)}
+  .nav__extra-social{display:flex;gap:10px;margin-top:12px}
+  .nav__extra-social a{
+    display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:var(--gray-bg);color:var(--green-900);font-size:.9rem;
+    transition:background var(--t),color var(--t);
+  }
+  .nav__extra-social a:hover{background:var(--orange-500);color:var(--white)}
   .nav-backdrop{
     position:fixed;inset:0;background:rgba(43,43,43,.45);
     backdrop-filter:blur(3px);z-index:1100;
@@ -858,17 +944,23 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
   .topbar__contact li:not(:first-child){display:none}
   .topbar__contact{gap:14px}
   .services__grid,.fleet__grid,.blog__grid,.testimonials__grid,.why__grid{grid-template-columns:1fr}
+  .why__grid > .why-card,
+  .why__grid > .why-card:nth-child(5){grid-column:auto}
   .about__cards{grid-template-columns:1fr}
   .coverage__list{grid-template-columns:1fr}
   .timeline__track{grid-template-columns:1fr;gap:34px}
   .footer__grid{grid-template-columns:1fr;gap:34px}
   .footer__bottom .container{flex-direction:column;text-align:center}
+  .footer__legal{flex-direction:column;text-align:center}
   .hero__actions{flex-direction:column;align-items:stretch}
   .hero__actions .btn{width:100%}
   .process-step{flex:1 1 100%}
   .fleet-card__specs{grid-template-columns:1fr 1fr}
   .about__badge{right:14px;bottom:14px;padding:14px 18px}
   .wa-float{right:18px;bottom:18px}
+  /* El texto del globo es largo: en pantallas pequeñas se sale por la izquierda
+     si se mantiene en una sola línea, así que aquí lo dejamos partir en varias. */
+  .wa-float__tooltip{white-space:normal;text-align:right;width:max-content;max-width:calc(100vw - 110px)}
   .to-top{right:22px;bottom:88px}
   .contact__form-wrap{padding:26px 20px}
   .brand__logo{height:40px}
@@ -883,6 +975,7 @@ h1,h2,h3,h4{font-family:var(--font-title);line-height:1.18;font-weight:700;lette
 
 /* ------------------------- 24. PREFERENCIAS ------------------------- */
 @media (prefers-reduced-motion:reduce){
+  .timeline__bus{animation:none}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1!important;transform:none!important}
 }
